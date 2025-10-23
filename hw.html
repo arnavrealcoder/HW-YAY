@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Accessing Values with HTML DOM</title>
+</head>
+<body>
+  <h2>Accessing Values with HTML DOM</h2>
+
+  <p id="objectValue"></p>
+  <p id="arrayValue"></p>
+  <p id="joinedArray"></p>
+
+  <button onclick="showValues()">Show Values</button>
+  <button onclick="popValue()">Pop Last Value</button>
+
+  <script>
+    // Create an object
+    const person = {
+      name: "Alex",
+      age: 21,
+      city: "Seoul"
+    };
+
+    // Create an array
+    let fruits = ["Apple", "Banana", "Cherry"];
+
+    // Function to display object and array values
+    function showValues() {
+      document.getElementById("objectValue").innerHTML =
+        "Name: " + person.name + ", Age: " + person.age + ", City: " + person.city;
+
+      document.getElementById("arrayValue").innerHTML =
+        "Fruits: " + fruits[0] + ", " + fruits[1] + ", " + fruits[2];
+
+      document.getElementById("joinedArray").innerHTML =
+        "Joined Array: " + fruits.join(" - ");
+    }
+
+    // Function to pop (remove) the last item from the array and show updated array
+    function popValue() {
+      fruits.pop();
+      document.getElementById("joinedArray").innerHTML =
+        "After pop(): " + fruits.join(" - ");
+    }
+  </script>
+</body>
+</html>
